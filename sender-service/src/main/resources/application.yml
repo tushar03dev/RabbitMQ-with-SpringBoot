@@ -1,0 +1,13 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: sender-service
+
+  cloud:
+    stream:
+      defaultBinder: rabbit
+      bindings:
+        send-out-0:
+          destination: simple-topic
+          content-type: text/plain

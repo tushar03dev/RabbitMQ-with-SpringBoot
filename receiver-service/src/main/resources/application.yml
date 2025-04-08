@@ -1,0 +1,14 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: receiver-service
+
+  cloud:
+    stream:
+      defaultBinder: rabbit
+      bindings:
+        receive-in-0:
+          destination: simple-topic
+          group: receiver-group
+          content-type: text/plain
